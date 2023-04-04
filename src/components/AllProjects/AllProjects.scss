@@ -1,0 +1,20 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/global";
+
+.projects {
+  margin: 2rem 0;
+
+  @include tablet {
+    margin: 2rem 0 6rem;
+  }
+
+  &__heading {
+    @extend .subheading;
+  }
+
+  &__container {
+    @include flex($justify: space-evenly, $wrap: wrap);
+  }
+}

@@ -1,0 +1,19 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/global";
+
+.stack {
+  @include flex($justify: flex-start, $wrap: wrap);
+  // width: 100%;
+
+  &__technology {
+    @include flex($direction: column);
+    padding: 0.4rem;
+  }
+
+  &__name {
+    font-size: 1rem;
+    margin: 0 0.2rem;
+  }
+}

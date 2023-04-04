@@ -1,0 +1,28 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/global";
+
+.highlights {
+  &__list {
+    margin: 2rem 0;
+
+    @include tablet {
+      align-self: flex-end;
+      width: 100%;
+    }
+
+    @include desktop {
+      max-width: 22rem;
+      align-self: flex-end;
+    }
+  }
+
+  &__highlight {
+    font-family: "Bold";
+    padding: 0.4rem 0 0.4rem 2rem;
+    &::before {
+      content: "⚙  ";
+      font-size: 2.6rem;
+      vertical-align: middle;
+    }
+  }
+}

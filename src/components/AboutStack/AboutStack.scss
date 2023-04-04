@@ -1,0 +1,35 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/global";
+
+.about-stack {
+  padding: 2rem 0;
+  @include tablet {
+    padding: 0;
+  }
+
+  &__stack {
+    padding-top: 0.8rem;
+  }
+
+  &__stack-section {
+    @include flex($justify: flex-start);
+    padding: 1.2rem 0;
+    border-bottom: 2px solid black;
+
+    @include tablet {
+      border-bottom: none;
+      padding: 0.4rem 0;
+    }
+  }
+
+  &__stack-type {
+    width: 8rem;
+    font-family: "Pacifico";
+  }
+
+  &__technologies {
+    padding-left: 2rem;
+  }
+}

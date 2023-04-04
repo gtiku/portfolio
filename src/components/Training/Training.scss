@@ -1,0 +1,40 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/global";
+
+.training {
+  padding: 4rem 0;
+  @include tablet {
+    padding: 0 0 0 2rem;
+  }
+  @include desktop {
+    padding: 0;
+  }
+
+  &__container {
+    padding-top: 0.8rem;
+  }
+
+  &__course {
+    @include flex($justify: flex-start);
+  }
+
+  &__name,
+  &__type,
+  &__institution {
+    font-size: 1.4rem;
+  }
+
+  &__institution {
+    color: $yellow;
+  }
+
+  &__institution-logo {
+    height: 6rem;
+    width: 6rem;
+    border: 2px solid black;
+    margin-right: 1rem;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,90 @@
+@use "./variables" as *;
+
+@mixin tablet {
+  @media (min-width: $tablet-size) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $desktop-size) {
+    @content;
+  }
+}
+
+@mixin flex($direction: row, $justify: center, $align: center, $wrap: nowrap) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  flex-wrap: $wrap;
+}
+
+@mixin memoji-header {
+  height: 12rem;
+  padding: 0.8rem 1.3rem 0 1.1rem;
+  margin: -1.2rem;
+  @include tablet {
+    height: 8rem;
+  }
+}
+
+@mixin memoji-img {
+  height: 30rem;
+  width: fit-content;
+}
+
+@mixin card-shadow {
+  border: 4px solid black;
+
+  @include tablet {
+    box-shadow: 12px 12px 0px -3px black;
+    position: relative;
+    overflow: hidden;
+
+    &:hover {
+      box-shadow: 12px 12px 0px -3px $yellow;
+    }
+
+    &::after {
+      content: "";
+      top: 0;
+      left: 0;
+      position: absolute;
+      transform: scale(0);
+      transition: transform 0.3s ease-in;
+    }
+
+    &:active {
+      border-color: $blue2;
+      top: 12px;
+      left: 12px;
+      box-shadow: none;
+    }
+  }
+}
+
+@mixin button-shadow {
+  border: 4px solid black;
+
+  @include tablet {
+    box-shadow: 6px 6px 0px -1px black;
+    position: relative;
+    overflow: hidden;
+
+    &::after {
+      content: "";
+      top: 0;
+      left: 0;
+      position: absolute;
+      transform: scale(0);
+      transition: transform 0.3s ease-in;
+    }
+
+    &:active {
+      top: 6px;
+      left: 6px;
+      box-shadow: none;
+    }
+  }
+}

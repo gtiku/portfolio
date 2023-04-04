@@ -1,0 +1,23 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/global";
+
+.footer {
+  background-color: $purple;
+  height: 7rem;
+  border-top: 4px solid black;
+  border-bottom: 4px solid black;
+  @include flex;
+
+  a > &__contact-icon {
+    font-size: 3rem;
+    color: $orange;
+    margin: 0 2rem;
+    margin-bottom: -0.2rem;
+
+    &:hover {
+      color: $yellow;
+    }
+  }
+}

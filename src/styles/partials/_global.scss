@@ -1,0 +1,146 @@
+@use "./variables" as *;
+@use "./typography" as *;
+@use "./mixins" as *;
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Regular";
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.6rem;
+  color: black;
+
+  ::selection {
+    background: $green;
+  }
+
+  @include tablet {
+    font-size: 1.4rem;
+    line-height: 2rem;
+  }
+}
+
+h1,
+h2 {
+  font-family: "CCrisis";
+  font-weight: 900;
+  font-size: 2.4rem;
+  line-height: 3rem;
+  letter-spacing: 0.1rem;
+  @include tablet {
+    font-size: 3rem;
+    line-height: 3.2rem;
+  }
+}
+
+h1 {
+  background: $blue2;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 2px black;
+  letter-spacing: 6px;
+}
+
+h2 {
+  background: $orange2;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 2px black;
+  letter-spacing: 6px;
+}
+
+h3 {
+  font-family: "CCrisis";
+  font-weight: 900;
+  font-size: 1.8rem;
+  line-height: 2.2rem;
+  background: $yellow;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 2px black;
+  letter-spacing: 4px;
+}
+
+h4 {
+  font-family: "Pacifico";
+  font-weight: 400;
+  font-size: 1.8rem;
+  line-height: 2rem;
+  color: black;
+  @include tablet {
+    font-size: 2rem;
+    line-height: 2.4rem;
+  }
+}
+
+h5 {
+  font-family: "Bold";
+  font-weight: 900;
+}
+
+h6 {
+  font-family: "SemiBold";
+  font-weight: 600;
+}
+
+p {
+  font-family: "Regular";
+  font-weight: 400;
+}
+
+a,
+a:link,
+a:visited {
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+button {
+  background-color: $yellow;
+  color: black;
+  padding: 0.4rem 1.2rem;
+  border: 4px solid black;
+  font-family: "Pacifico";
+  font-weight: 600;
+  font-size: 1.6rem;
+  cursor: pointer;
+  @include button-shadow;
+
+  &:hover {
+    color: $orange2;
+  }
+}
+
+.subheading {
+  font-size: 2rem;
+  padding-bottom: 0.4rem;
+  margin: 4rem 0 2rem 0;
+  border-bottom: 4px solid black;
+
+  @include tablet {
+    font-size: 3rem;
+  }
+}
+
+.stack__icon {
+  font-size: 2.4rem;
+  padding: 0.4rem;
+
+  @include tablet {
+    padding: 0;
+  }
+}

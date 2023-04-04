@@ -1,0 +1,98 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/global";
+
+.project-card {
+  position: relative;
+  width: 28rem;
+  height: 34rem;
+  background-color: $orange;
+  padding: 1.2rem;
+  margin: 2rem;
+  @include card-shadow;
+  @include flex($direction: column, $justify: flex-start, $align: flex-start);
+  &--incomplete {
+    border: 6px solid $blue;
+  }
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: 0.5s ease;
+    background-color: $blue2;
+    z-index: 1;
+  }
+
+  &__overlay-highlights {
+    color: black;
+    font-size: 1.6rem;
+    position: absolute;
+    top: 15%;
+    left: 0%;
+  }
+
+  &:hover &__overlay {
+    opacity: 1;
+    z-index: 1;
+  }
+
+  &:active &__overlay {
+    opacity: 0;
+  }
+
+  &__image {
+    object-fit: cover;
+    background-position: center;
+    width: 24rem;
+    height: 12rem;
+    -webkit-background-origin: border;
+    border: 2px solid black;
+    background-color: black;
+    margin: 0 auto;
+  }
+
+  &__headings {
+    @include flex($direction: column, $align: flex-start, $justify: flex-start);
+  }
+
+  &__text-container {
+    padding-top: 0.4rem;
+    height: 18.6rem;
+    @include flex(
+      $direction: column,
+      $align: flex-start,
+      $justify: space-between
+    );
+  }
+
+  &__heading,
+  &__subtitle {
+    margin: 0.8rem 0;
+  }
+
+  &__heading {
+    color: $orange2;
+  }
+
+  &__subtitle {
+    font-size: 1.2rem;
+    margin-top: 0.4rem;
+
+    &--stack {
+      color: $blue;
+      padding-right: 0.2rem;
+    }
+
+    &--type {
+      color: $purple;
+      padding-left: 0.4rem;
+    }
+  }
+}

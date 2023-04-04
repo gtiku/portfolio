@@ -1,0 +1,22 @@
+@use "../../styles/partials/mixins" as *;
+
+.emojis {
+  @include flex($wrap: wrap);
+  max-width: 23rem;
+  margin: 4rem auto;
+
+  @include tablet {
+    min-width: 45rem;
+  }
+
+  @include desktop {
+    max-width: 100%;
+    margin: 6rem auto 4rem;
+  }
+
+  &__item {
+    font-size: 4rem;
+    margin: 2rem 1rem;
+    text-align: center;
+  }
+}
