@@ -8,23 +8,21 @@ import "./styles/App.scss";
 
 function App() {
   return (
-    <div className="App">
-      <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <div className="App">
         <div className="App__content">
           <Header />
           <Routes>
             <Route path="*" element={<NotFound />} />
-            <Route path="/404" element={<NotFound />} />
             <Route path="/" element={<HomeView />} exact />
-            <Route path="/projects/:id" element={<SingleProjectView />} exact />
             <Route path="/projects/:id" element={<SingleProjectView />} exact />
           </Routes>
         </div>
         <section className="App__footer">
           <Footer />
         </section>
-      </BrowserRouter>
-    </div>
+      </div>
+    </BrowserRouter>
   );
 }
 
