@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/static/css/main.a3071b4f.css",
+    "main.js": "/static/js/main.eba5b63e.js",
+    "static/media/NotoSans-SemiBold.ttf": "/static/media/NotoSans-SemiBold.99df72e26c72877cb1f9.ttf",
+    "static/media/NotoSans-Black.ttf": "/static/media/NotoSans-Black.4a2324b5d2997bf513b1.ttf",
+    "static/media/NotoSans-Regular.ttf": "/static/media/NotoSans-Regular.eae34fa8f1e0c4c6d797.ttf",
+    "static/media/Pacifico-Regular.ttf": "/static/media/Pacifico-Regular.c0d735fc04154e03a691.ttf",
+    "static/media/ClimateCrisis-Regular-VariableFont_YEAR.ttf": "/static/media/ClimateCrisis-Regular-VariableFont_YEAR.e92540035963f6e35005.ttf",
+    "static/media/Giyona_Tiku_Resume.pdf": "/static/media/Giyona_Tiku_Resume.864d6d411a3a9e315f98.pdf",
+    "static/media/laptop.png": "/static/media/laptop.8abbe0ac1c170222f858.png",
+    "static/media/confused.png": "/static/media/confused.9b9dba7857cb2c2a11c3.png",
+    "static/media/smile.png": "/static/media/smile.622b36f170301ce1ed1b.png",
+    "index.html": "/index.html",
+    "main.a3071b4f.css.map": "/static/css/main.a3071b4f.css.map",
+    "main.eba5b63e.js.map": "/static/js/main.eba5b63e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a3071b4f.css",
+    "static/js/main.eba5b63e.js"
+  ]
+}
