@@ -9,7 +9,7 @@ import "./styles/App.scss";
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <div className="App__content">
           <Header />
           <Routes>
