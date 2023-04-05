@@ -2,7 +2,8 @@
 
 ## Built in React with a custom Sass responsive design
 
-![image](https://user-images.githubusercontent.com/62849940/229951661-a3d7aa57-31d8-4d5b-a155-e4312eeee4a3.png)
+![image](https://user-images.githubusercontent.com/62849940/229952834-3447e90d-7102-4edb-8ec2-0bbc883859db.png)
+
 
 ## Responsive Design
 
