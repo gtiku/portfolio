@@ -2,10 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import confused from "../../assets/images/Memoji/confused.png";
 import "./NotFound.scss";
-
 import { BsArrowLeftCircleFill } from "react-icons/bs";
 
 const NotFound = () => {
+  document.title = `Page Not Found`;
+
   return (
     <div className="notfound">
       <section className="notfound__hero">

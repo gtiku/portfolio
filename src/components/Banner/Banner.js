@@ -13,11 +13,15 @@ const Banner = () => {
           <br />
           <br />
           <br />
-          <h6 className="banner__title">
-            <i>Check out my portfolio to see more!</i>
+          <h6 className="banner__subtitle">
+            Please visit my portfolio website to see more!
           </h6>
           <br />
-          <p className="banner__aside">Link under "Contact Info"</p>
+          <p className="banner__link">
+            <i>
+              <strong>https://gtiku.github.io/portfolio/</strong>
+            </i>
+          </p>
         </div>
       </div>
     </div>

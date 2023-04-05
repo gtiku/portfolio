@@ -1,11 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import smile from "../../assets/images/Memoji/smile.png";
 import { MdFileDownload } from "react-icons/md";
-import pdf from "../../assets/documents/Giyona_Tiku_Resume.pdf";
 import "./Header.scss";
 
 const Header = () => {
+  let navigate = useNavigate();
   return (
     <section className="header">
       <Link to="/">
@@ -17,12 +17,9 @@ const Header = () => {
           </div>
         </div>
       </Link>
-      <Link to={pdf} target="_blank">
-        {" "}
-        <button className="header__button">
-          Resume <MdFileDownload className="header__download-icon" />
-        </button>
-      </Link>
+      <button className="header__button" onClick={() => navigate("/resume")}>
+        Resume <MdFileDownload className="header__download-icon" />
+      </button>
     </section>
   );
 };

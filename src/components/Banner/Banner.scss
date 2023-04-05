@@ -27,14 +27,20 @@
     padding-bottom: 2rem;
   }
 
-  &__title {
+  &__title,
+  &__subtitle {
     font-size: 4rem;
     line-height: 4.4rem;
   }
 
-  &__aside {
+  &__subtitle {
+    color: $orange2;
+  }
+
+  &__link {
     padding-top: 1rem;
     font-size: 3rem;
+    // color: $blue2;
   }
 
   &__image {
