@@ -5,6 +5,7 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import NotFound from "./pages/NotFound/NotFound";
 import Resume from "./components/Resume/Resume";
+import FeedbackForm from "./components/FeedbackForm/FeedbackForm";
 import "./styles/App.scss";
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
             <Route path="/resume" element={<Resume />} />
             <Route path={"*"} element={<NotFound />} />
           </Routes>
+          <FeedbackForm />
         </div>
         <section className="App__footer">
           <Footer />

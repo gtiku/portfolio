@@ -14,7 +14,7 @@ const Banner = () => {
           <br />
           <br />
           <h6 className="banner__subtitle">
-            Please visit my portfolio website to see more!
+            Visit my portfolio website to check out my projects!
           </h6>
           <br />
           <p className="banner__link">

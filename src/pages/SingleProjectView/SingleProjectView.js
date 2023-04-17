@@ -34,7 +34,7 @@ const SingleProjectView = () => {
           />
         </div>
         <div className="project__highlights">
-          <h3 className="project__highlights-heading">Tools & Features</h3>
+          <h3 className="project__summary-heading">Tools & Features</h3>
           <div className="project__stack-highlights">
             <StackBlock techIDs={project.stackTechonologies} />
             <Highlights highlights={project.highlights} />
@@ -49,7 +49,7 @@ const SingleProjectView = () => {
       </section>
       <ProjectLinks project={project} />
       <section className="project__details">
-        <h3 className="project__details-heading">Highlights</h3>
+        <h3 className="project__highlights-heading">Highlights</h3>
         {project.details.map((detail, index) => {
           return (
             <div className="project__detail" key={index}>

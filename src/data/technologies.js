@@ -29,6 +29,7 @@ import {
   SiAmazonaws,
   SiPostman,
   SiGithub,
+  SiHeroku,
 } from "react-icons/si";
 
 import { MdOutlineDevices, MdHttp } from "react-icons/md";
@@ -197,6 +198,11 @@ const allTechnologies = [
     id: 32,
     name: "Github",
     icon: <SiGithub className={icon_class} />,
+  },
+  {
+    id: 33,
+    name: "Heroku",
+    icon: <SiHeroku className={icon_class} />,
   },
 ];
 export default allTechnologies;

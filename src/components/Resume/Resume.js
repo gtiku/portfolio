@@ -7,7 +7,7 @@ const Resume = () => {
     <iframe
       src={pdf}
       width="100%"
-      height="800px"
+      height="1200px"
       className="resume"
       title="resume"
     />

@@ -5,8 +5,12 @@ module.exports = [
     isCompleted: true,
     projectType: "Personal Project",
     stackType: "Front-end",
-    stackTechonologies: [16, 13, 4],
-    highlights: ["This site was built in React!"],
+    stackTechonologies: [16, 13, 4, 5, 6, 8, 33],
+    highlights: [
+      "This site was built in React!",
+      "MERN stack",
+      "NoSQL database",
+    ],
     summary: "",
     cardImage:
       "https://user-images.githubusercontent.com/62849940/229952834-3447e90d-7102-4edb-8ec2-0bbc883859db.png",
@@ -26,7 +30,8 @@ module.exports = [
         image:
           "https://user-images.githubusercontent.com/62849940/229950752-94aa125d-b1f4-4ca4-a5a6-29981870a897.png",
         subtitle: "Deployment",
-        description: "This app is deployed to Github Pages.",
+        description:
+          "The frontend of this app app is deployed to Github Pages. The backend API is hosted on Heroku with a MongoDB NoSQL database.",
       },
     ],
     github: "https://github.com/gtiku/portfolio",
