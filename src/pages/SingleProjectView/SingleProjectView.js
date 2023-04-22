@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import { useParams } from "react-router-dom";
-import projects from "../../data/projects";
 import StackBlock from "../../components/StackBlock/StackBlock";
 import "./SingleProjectView.scss";
 
@@ -9,18 +9,31 @@ import NotFound from "../NotFound/NotFound";
 import Highlights from "../../components/Highlights/Highlights";
 
 const SingleProjectView = () => {
+  const [project, setProject] = useState("");
+  let API_URL = `${process.env.REACT_APP_API_URL}/projects`;
   let { id } = useParams();
-  let project = projects.find((item) => item.id === Number(id));
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
+  useEffect(() => {
+    const getProject = async () => {
+      try {
+        const { data } = await axios.get(API_URL);
+        setProject(data.find((project) => project._id === id));
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    getProject();
+  });
+
   if (!project || project.isCompleted === false) {
     return <NotFound />;
   }
-  document.title = `Giyona Tiku - Project: ${project.title}`;
 
+  document.title = `Giyona Tiku - Project: ${project.title}`;
   return (
     <div className="project">
       <h2 className="project__title">{project.title}</h2>

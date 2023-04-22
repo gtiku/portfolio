@@ -10,7 +10,7 @@ const ProjectCard = ({ project }) => {
     <div
       onClick={(e) => {
         if (project.isCompleted) {
-          navigate(`/projects/${project.id}`);
+          navigate(`/projects/${project._id}`);
         } else {
           e.preventDefault();
         }

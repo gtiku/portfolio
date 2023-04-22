@@ -1,5 +1,5 @@
 import React from "react";
-import allTechnologies from "../../data/technologies";
+import allTechnologies from "../../utils/technologies";
 import "./StackBlock.scss";
 
 const StackBlock = ({ techIDs }) => {
