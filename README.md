@@ -43,3 +43,7 @@ npm start
 
 <br><br>
 
+## Backend API
+
+
+The API repository can be accessed [here](https://github.com/gtiku/portfolio_api/tree/main).
