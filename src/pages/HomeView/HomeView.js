@@ -17,7 +17,7 @@ const HomeView = () => {
     const getProjects = async () => {
       try {
         const { data } = await axios.get(API_URL);
-        setProjects(data);
+        setProjects(data.filter((project) => project.rank !== 0));
       } catch (error) {
         console.error(error);
       }

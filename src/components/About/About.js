@@ -31,7 +31,7 @@ const About = () => {
             <AiOutlineArrowRight /> Full Stack Developer
           </p>
           <p className="about__bio-text">
-            ... looking to begin my career in tech as a software developer, in a
+            ... looking to begin my career in tech as a software developer in a
             role where I will be able to learn from experienced professionals
             and develop my skills.
           </p>

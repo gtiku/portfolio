@@ -2,15 +2,17 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import StackBlock from "../../components/StackBlock/StackBlock";
-import "./SingleProjectView.scss";
-
 import ProjectLinks from "../../components/ProjectLinks/ProjectLinks";
 import NotFound from "../NotFound/NotFound";
 import Highlights from "../../components/Highlights/Highlights";
+import Loading from "../../components/Loading/Loading";
+import "./SingleProjectView.scss";
 
 const SingleProjectView = () => {
   const [project, setProject] = useState("");
-  let API_URL = `${process.env.REACT_APP_API_URL}/projects`;
+  const [loading, setLoading] = useState(true);
+  const [notFound, setNotFound] = useState(false);
+
   let { id } = useParams();
 
   useEffect(() => {
@@ -18,22 +20,44 @@ const SingleProjectView = () => {
   }, []);
 
   useEffect(() => {
+    let API_URL = `${process.env.REACT_APP_API_URL}/projects`;
+
     const getProject = async () => {
-      try {
-        const { data } = await axios.get(API_URL);
-        setProject(data.find((project) => project._id === id));
-      } catch (error) {
-        console.error(error);
+      if (id.length === 24) {
+        try {
+          const { data } = await axios.get(API_URL);
+          setNotFound(data.find((project) => project._id === id) === false);
+          setProject(data.find((project) => project._id === id));
+          setLoading(false);
+        } catch (error) {
+          console.error(error);
+          setLoading(false);
+          setNotFound(true);
+        }
+      } else {
+        setLoading(false);
+        setNotFound(true);
       }
     };
     getProject();
-  });
 
-  if (!project || project.isCompleted === false) {
-    return <NotFound />;
+    if (project && project.isCompleted === false) {
+      setNotFound(true);
+    } else if (!project) {
+      setNotFound(true);
+    }
+  }, [id, project]);
+
+  while (loading) {
+    return <Loading />;
   }
 
+  while (notFound || project === undefined) {
+    document.title = `Giyona Tiku - Project Not Found`;
+    return <NotFound />;
+  }
   document.title = `Giyona Tiku - Project: ${project.title}`;
+
   return (
     <div className="project">
       <h2 className="project__title">{project.title}</h2>
