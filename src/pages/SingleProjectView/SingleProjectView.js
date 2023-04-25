@@ -20,43 +20,33 @@ const SingleProjectView = () => {
   }, []);
 
   useEffect(() => {
-    let API_URL = `${process.env.REACT_APP_API_URL}/projects`;
-
     const getProject = async () => {
-      if (id.length === 24) {
+      if (loading) {
+        let API_URL = `${process.env.REACT_APP_API_URL}/projects/${id}`;
         try {
           const { data } = await axios.get(API_URL);
-          setNotFound(data.find((project) => project._id === id) === false);
-          setProject(data.find((project) => project._id === id));
+          setProject(data);
+          document.title = `Giyona Tiku - Project: ${data.title}`;
           setLoading(false);
         } catch (error) {
           console.error(error);
-          setLoading(false);
           setNotFound(true);
+          setLoading(false);
         }
-      } else {
-        setLoading(false);
-        setNotFound(true);
       }
     };
     getProject();
+  }, [id, loading]);
 
-    if (project && project.isCompleted === false) {
-      setNotFound(true);
-    } else if (!project) {
-      setNotFound(true);
-    }
-  }, [id, project]);
-
-  while (loading) {
-    return <Loading />;
-  }
-
-  while (notFound || project === undefined) {
+  if (!loading && (notFound || project.isCompleted === false)) {
     document.title = `Giyona Tiku - Project Not Found`;
     return <NotFound />;
   }
-  document.title = `Giyona Tiku - Project: ${project.title}`;
+
+  while (loading) {
+    document.title = `Giyona Tiku - Project Loading`;
+    return <Loading />;
+  }
 
   return (
     <div className="project">
